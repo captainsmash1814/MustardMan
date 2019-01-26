@@ -8,11 +8,12 @@ public class Player : MonoBehaviour
     private bool facingRight = false;
     public int playerJumpPower = 100;
     private float moveX;
+    Animator anim;
 
     // Use this for initialization
     void Start()
     {
-
+        anim = GetComponent<Animator>(); 
 
     }
 
@@ -20,7 +21,18 @@ public class Player : MonoBehaviour
     void Update()
     {
         PlayerMove();
+        if (Input.GetKeyDown (KeyCode.RightArrow)) {
 
+            anim.SetInteger("State",1);
+
+        }
+
+        //if (Input.GetKeyUp(KeyCode.RightArrow))
+        //{
+
+        //    anim.SetInteger("State", 0);
+
+        //}
     }
 
     void PlayerMove()
