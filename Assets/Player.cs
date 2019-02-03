@@ -20,13 +20,16 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PlayerMove();
-        if (Input.GetKeyDown (KeyCode.RightArrow)) {
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
 
-            anim.SetInteger("State",1);
+            anim.SetInteger("State", 1);
 
         }
 
+        PlayerMove();
+
+    
         //if (Input.GetKeyUp(KeyCode.RightArrow))
         //{
 
@@ -48,6 +51,7 @@ public class Player : MonoBehaviour
         if (moveX < 0.0f && facingRight == false)
         {
             FlipPlayer();
+
 
         } else if (moveX > 0.0f && facingRight == true)
         {
